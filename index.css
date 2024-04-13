@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    perspective: 1000px;
+  }
+  
+  .fireworks-container {
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .globe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+  }
+  
+  .earth {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url('earth.png') no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    animation: rotate-earth 20s linear infinite;
+  }
+  
+  @keyframes rotate-earth {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0;
+    border-radius: 50%;
+    animation: firework 1s infinite alternate ease-in-out;
+  }
+  
+  @keyframes firework {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .firework:nth-child(1) {
+    top: 50px;
+    left: 50px;
+  }
+  
+  .firework:nth-child(2) {
+    top: 150px;
+    left: 150px;
+  }
+  
+  /* Add more fireworks by copying and adjusting the nth-child rules */
+  
+  .message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+  }
+  
